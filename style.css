@@ -1,0 +1,194 @@
+/* Base styles */
+:root {
+  /* CUSTOMIZE: Change the background color */
+  --background-color: #ffd6e7;
+  
+  /* CUSTOMIZE: Change the container background color */
+  --container-background: #ffffff;
+  
+  /* CUSTOMIZE: Change the header background color */
+  --header-background: #ff69b4;
+  
+  /* CUSTOMIZE: Change the header text color */
+  --header-text-color: white;
+  
+  /* CUSTOMIZE: Change the button background color */
+  --button-background: #ff69b4;
+  
+  /* CUSTOMIZE: Change the button text color */
+  --button-text-color: white;
+  
+  /* CUSTOMIZE: Change the image path */
+  --image-path-content: url('./assets/flower.png');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: var(--container-background);
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.shrink-close-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.shrink-icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.inner-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.image-content {
+  width: 200px;
+  height: 200px;
+  background-image: var(--image-path-content);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 1s ease;
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.final-message {
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Animation classes */
+.grow {
+  transform: scale(1.5);
+}
+
+.show {
+  opacity: 1;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-content h2 {
+  color: #ff69b4;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.message-text {
+  padding: 15px;
+  border: 2px solid #ffd6e7;
+  border-radius: 10px;
+  background-color: #fff9fb;
+  line-height: 1.6;
+}
+
+.message-text p {
+  margin-bottom: 10px;
+  color: #602f6b;
+  text-align: center;
+}
+
+.message-text p:last-child {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.popup-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.popup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
