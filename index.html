@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CUSTOMIZE: Change the page title -->
+  <title>For you <3</title>
+  
+  <!-- CUSTOMIZE: Update the favicon path/filename as needed -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png" sizes="32x32">
+  
+  <!-- Link to your stylesheet - don't change unless you rename style.css -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- CUSTOMIZE: You can add Google Fonts or other resources here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Popup for message -->
+  <div id="messagePopup" class="popup">
+    <div class="popup-content">
+      <h2>Gửi em!</h2>
+      <div class="message-text">
+        <p>Helu voiuuu,h là 3h sáng nên nếu em đọc đc cnay chắc anh ngủ rùi,hjhj xloi vì nói dối là đi ngủ ạ:]]</p>
+        <p>Tuy hơi sớm nhma chúc em 1/6 vui vẻ tích cực nhaaaa,aiu em nhiều lắm đóo</p>
+        <p>Ước gì tớ có thể đưa quà tận nơi cho em:[ nên anh làm cnay để đền bù cho bé, mong em thích ajaaa:Đ</p>
+        <p>Chúc em yêu 1/6 vui vẻ, cười nhiều lên vì anh thích em cười lắm. Anh yêu emmmmmmmmm</p>
+      </div>
+      <button id="nextPageButton" class="popup-button">Next Page</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <!-- CUSTOMIZE: Change the header text -->
+      <h1>Tặng.... <3</h1>
+      
+      <div class="shrink-close-icons">
+        <!-- CUSTOMIZE: Update icon paths/filenames as needed -->
+        <img src="./assets/shrink-icon.png" alt="Shrink Icon" class="shrink-icon" />
+        <img src="./assets/close-icon.png" alt="Close Icon" class="shrink-icon" />
+      </div> 
+    </header>
+    
+    <div class="inner-container">
+      <!-- The image is loaded via CSS from the --image-path-content variable -->
+      <div class="image-content"></div>
+      
+      <!-- CUSTOMIZE: Change the button text -->
+      <button id="main-button">Grow!</button>
+      
+      <!-- CUSTOMIZE: Change the final message text -->
+      <div class="final-message">Have a good day!</div>
+    </div>
+  </div>
+
+  <!-- Link to your JavaScript - don't change unless you rename index.js -->
+  <script src="index.js"></script>
+  
+  <script>
+    // Counter for button clicks
+    let clickCount = 0;
+    
+    // Show popup after 4 clicks on the Grow button
+    document.getElementById('main-button').addEventListener('click', function() {
+      clickCount++;
+      
+      if (clickCount === 4) {
+        // Show popup after the animation completes on the 4th click
+        setTimeout(function() {
+          document.getElementById('messagePopup').style.display = 'flex';
+        }, 2000); // 2 seconds delay
+      }
+    });
+    
+    // Add event listener for Next Page button
+    document.getElementById('nextPageButton').addEventListener('click', function() {
+      // Navigate to the playlist page
+      window.location.href = './playlist-ui-real/index.html';
+    });
+  </script>
+</body>
+</html>
